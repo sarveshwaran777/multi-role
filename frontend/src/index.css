@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply h-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased transition-colors duration-300;
+  }
+}
+
+/* Custom Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full hover:bg-slate-400 dark:hover:bg-slate-700 transition-colors;
+}
+
+/* Glassmorphism panel configurations */
+.glass-panel {
+  @apply bg-white/75 dark:bg-slate-900/75 border border-slate-200/50 dark:border-slate-800/50 backdrop-blur-md;
+}
+
+.glass-panel-hover {
+  @apply hover:bg-white/90 dark:hover:bg-slate-900/90 transition-all duration-300;
+}
+
+/* Glowing accent effects */
+.glow-indigo {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.15);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+}
+
+/* Keyframe animations for state changes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Grid overlay background */
+.grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgb(226, 232, 240) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+.dark .grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgb(30, 41, 59) 1px, transparent 0);
+  background-size: 24px 24px;
+}
