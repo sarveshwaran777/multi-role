@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const { UserDb } = require('../utils/dbMock');
 const { protect, authorize } = require('../middleware/auth');
 const { broadcastUpdate } = require('../utils/updates');
 
